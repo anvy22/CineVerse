@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
+import { UserButton } from '@clerk/clerk-react';
 
 function Navbar({ isWatchlistSelected, setWatchlistSelected, setWatchlistData }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -49,6 +50,7 @@ function Navbar({ isWatchlistSelected, setWatchlistSelected, setWatchlistData })
             >
               {isWatchlistSelected ? "Home" : "Watchlist"}
             </button>
+            <UserButton/>
           </div>
 
           {/* Hamburger menu for small screens */}
@@ -70,10 +72,10 @@ function Navbar({ isWatchlistSelected, setWatchlistSelected, setWatchlistData })
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} bg-gray-800`}>
+      <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} border-white rounded`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <button 
-            className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 w-full text-left"
+            className="block px-3 py-5 rounded-md text-base font-medium bg-red-400 hover:bg-red-500 w-full text-left"
             onClick={() => {
               toggleWatchlist();
               setIsMobileMenuOpen(false);
@@ -81,6 +83,9 @@ function Navbar({ isWatchlistSelected, setWatchlistSelected, setWatchlistData })
           >
             {isWatchlistSelected ? "Home" : "Watchlist"}
           </button>
+          <div className='block px-3 py-5 rounded-md text-base font-medium bg-red-400  hover:bg-red-700 w-full text-left'>
+          <UserButton/>
+          </div>
         </div>
       </div>
     </nav>

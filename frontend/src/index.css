@@ -142,7 +142,7 @@
   }
 
   .watchlist-card {
-  @apply bg-dark-200 p-5 rounded-2xl shadow-md shadow-light-100/5 relative transition-all hover:scale-105 hover:shadow-lg;
+  @apply bg-white p-5 rounded-2xl shadow-md shadow-light-100/5 relative transition-all hover:scale-105 hover:shadow-lg;
 
   & img {
     @apply rounded-lg h-auto w-full;
